@@ -24,8 +24,7 @@ header {
 }
 
 header .nav-link {
-    /* background-color: #9f9f9f; */
-    /* width: fit-content; */
+
     display: flex;
     margin-left: 128px; 
 }
@@ -42,7 +41,7 @@ header .nav-link ul {
 .nav-link ul li a {
     color: white;
     text-decoration: none;
-    font-size: 28px;
+    font-size: 1.75rem;
 }
 .nav-link ul li a:hover {
     color: #D6651E;
@@ -64,12 +63,12 @@ main {
 
 main .content {
     max-width: 1522px;
-    margin: 134px;
+    margin: 7.5vw 7vw;
 }
 
 main .content h1{
-    /* font-size: 192px; */
-    font-size: 10vw;
+    font-size: 0.75rem;
+    font-size: clamp(5.5rem, -1.8461538461538463rem + 11.538461538461538vw, 12rem);
     margin: 64px 0px;
     color: #FFEBDC;
     font-family: "Sunflower", sans-serif;
@@ -112,30 +111,33 @@ main .content button {
     display: flex;
     flex-wrap: wrap;
     justify-content:center;
+    padding: 122px 0px 0px 0px;
 
 }
 
 .about-image {
+    flex:1; 
     display: block;
-    max-width: 580px;
-    max-height: 750px;
+    max-width: 100%;
+    height:auto;
     border-radius: 56px;
     margin: 222px 132px;
 }
 
 .about-text {
     max-width: 772px;
-    margin: 222px 132px;
+    margin: 11.5vw 6.8vw;
+    /* bottom:222px; */
 }
 
 .about-text h3{
-    font-size: 1.6vw;
+    font-size: clamp(1rem, 0.7403846153846154rem + 1.153846153846154vw, 2.125rem);
 }
 .about-text h1{
-    font-size: 8.3vw;
+    font-size: clamp(4rem, 2.6153846153846154rem + 6.153846153846154vw, 10rem);
 }
 .about-text p{
-    font-size: 1.6vw;
+    font-size: clamp(1rem, 0.7403846153846154rem + 1.153846153846154vw, 2.125rem);
     margin-top:36px;
 }
 
@@ -165,6 +167,7 @@ main .content button {
 
 .title {
     height: 110px;
+    min-width: 300px;
     max-width: 448px;
     background-color: #332D29;
     color: #EAE2DC;
@@ -214,7 +217,7 @@ main .content button {
     justify-content: space-between;
     gap: 32px;
     align-items: center;
-    max-width: 875;
+    padding: 10vw;
     
 
     /* padding: 128px 256px; */
