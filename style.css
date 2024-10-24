@@ -2,49 +2,150 @@
     --font1: 
 }
 
-
 * {
     padding:0;
-    margin:0;
+    margin:0; 
+    color:#EAE2DC;
 }
 
-/* =========================== NAVIGATION ================================= */
+html {
+    scroll-behavior: smooth;
+}
 
+/* =========================== NAV ================================= */
+.off-screen-nav {
+    background-color: #332D29;
+    height:100vh;
+    width: 100%;
+    max-width:450px;
+    position:fixed;
+    top:0;
+    right: -450px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3rem;
+    transition: .3s ease;
+}
+.off-screen-nav ul {
+    list-style: none;
+}
+
+.off-screen-nav ul li {
+    margin-right: 64px;
+    min-height: 120px;
+    align-items: center;
+    display: flex;
+}
+
+.off-screen-nav ul li a {
+    display: flex;
+    align-items: center;
+    color: #EAE2DC;
+    text-decoration: none;
+    font-size: 1.75rem;
+}
+
+.off-screen-nav.active {
+    right:0;
+}
 header {
     background-color: #332E2A;
-    min-height: 120px;
-    min-width: 1920px;
+    min-width: 100vw;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     position: fixed;
+    box-shadow: 3px 3px 5px rgba(32, 32, 32, 0.5);
+    overflow:hidden;
+    padding: 1rem;
 }
 
 header .nav-link {
-    /* background-color: #9f9f9f; */
-    /* width: fit-content; */
     display: flex;
     margin-left: 128px; 
 }
 
-header .nav-link ul {
+.nav-link ul {
     display: flex;
     list-style-type: none;
 }
 
 .nav-link ul li {
     margin-right: 64px;
+    min-height: 120px;
+    align-items:center;
+    display: flex;
 }
 
 .nav-link ul li a {
-    color: white;
+    display: flex;
+    align-items: center;
+    color: #EAE2DC;
     text-decoration: none;
-    font-size: 28px;
+    font-size: 1.75rem;
 }
 .nav-link ul li a:hover {
-    color: #D6651E;
-    text-decoration: none;
-    font-size: 28px;
+    color: #f0f0f0;
+}
+
+header .menu-icon {
+    width:64px;
+    height: 64px;
+    margin-left: 50%;
+    position: relative;
+    display: none;
+}
+
+.menu-icon span {
+    height: 5px;
+    width:100%;
+    background-color: #EAE2DC;
+    border-radius: 25px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+    
+}
+
+.menu-icon span:nth-child(1) {
+    top:25%;
+}
+
+.menu-icon span:nth-child(3) {
+    top:75%;
+}
+
+.menu-icon.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.menu-icon.active span:nth-child(2) {
+    opacity:0;
+}
+
+.menu-icon.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+@media screen and (max-width: 1024px) {
+
+    header {
+        height: 120px;
+        justify-content:end;
+    }
+    header .nav-link ul{
+        display: none;
+    }
+    header .menu-icon {
+        display:block;
+        margin-right: 64px;
+        
+    }
 }
 
 /* ==================== HERO ============================================ */
@@ -53,7 +154,8 @@ main {
     background-color: #332D29;
     min-height:100vh;
     background-image: url("rec/hero.JPG");
-    background-size: 1920px 1280px;
+    background-size: cover;
+    background-position: center;
     background-repeat: repeat;
     box-shadow: 0 3000px rgba(32, 32, 32, 0.5) inset;
     display: flex;
@@ -61,22 +163,23 @@ main {
 
 main .content {
     max-width: 1522px;
-    margin: 134px;
+    margin: 7.5vw 7vw;
 }
 
 main .content h1{
-    /* font-size: 192px; */
-    font-size: 10vw;
+    font-size: 0.75rem;
+    font-size: clamp(5.5rem, -1.8461538461538463rem + 11.538461538461538vw, 12rem);
     margin: 64px 0px;
     color: #FFEBDC;
     font-family: "Sunflower", sans-serif;
     font-weight: 700;
     font-style: normal;
-}
+} 
 
 
 main .content button {
     margin-top: 64px;
+    color:#EAE2DC;
 }
 
 /* ================ BUTTON ===============*/
@@ -87,8 +190,10 @@ main .content button {
     height: 84px;
     border-radius: 38px;
     color: #EAE2DC;
-    font-size:2.1875vw;
+    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 1.2115384615384617rem + 1.282051282051282vw, 2.75rem);
     border:0;
+    box-shadow: 3px 3px 5px rgba(32, 32, 32, 0.5);
 }
 
 .secondary {
@@ -99,6 +204,7 @@ main .content button {
     color:#EAE2DC;
     font-size:28px;
     border:0;
+    box-shadow: 3px 3px 5px rgba(32, 32, 32, 0.5);
 }
 
 /* ========================= ABOUT =====================================================*/
@@ -109,31 +215,38 @@ main .content button {
     display: flex;
     flex-wrap: wrap;
     justify-content:center;
+    /* padding: 122px 0px 0px 0px; */
 
 }
 
 .about-image {
-    display: block;
-    max-width: 580px;
-    max-height: 750px;
+    /* max-width: 100%; */
+    min-width:360px;
+    height:auto;
     border-radius: 56px;
-    margin: 222px 132px;
+    /* margin: 222px 132px; */
+    margin: 11.5vw 6.8vw;
+    box-shadow: 3px 3px 5px rgba(32, 32, 32, 0.5);
 }
 
 .about-text {
     max-width: 772px;
-    margin: 222px 132px;
+    margin: 11.5vw 6.8vw;
+    /* bottom:222px; */
 }
 
 .about-text h3{
-    font-size: 1.6vw;
+    font-size: clamp(1rem, 0.7403846153846154rem + 1.153846153846154vw, 2.125rem);
+    color: #332E2A;
 }
 .about-text h1{
-    font-size: 8.3vw;
+    font-size: clamp(4rem, 2.6153846153846154rem + 6.153846153846154vw, 10rem);
+    color: #332E2A;
 }
 .about-text p{
-    font-size: 1.6vw;
+    font-size: clamp(1rem, 0.7403846153846154rem + 1.153846153846154vw, 2.125rem);
     margin-top:36px;
+    color: #332E2A;
 }
 
 .about-text .secondary {
@@ -162,6 +275,7 @@ main .content button {
 
 .title {
     height: 110px;
+    min-width: 300px;
     max-width: 448px;
     background-color: #332D29;
     color: #EAE2DC;
@@ -190,31 +304,27 @@ main .content button {
 /* ============== LOCATION ================= */
 
 .location {
-    /* background-color: #8A4113; */
     background-color: #EAE2DC;
-    background-image: url("rec/brickwall.png");
+    background-image: url("rec/location.jpg");
+    background-position: center;
     box-shadow: 0 3000px rgba(32, 32, 32, 0.5) inset;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height:620px;
-    
+    min-height:820px;
 
 }
 
 .location .content {
-    background-color:rgba(214, 101, 30, .8);
+    background-color:rgba(6, 40, 26, .5);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 32px;
     align-items: center;
-    max-width: 875;
-    
-
-    /* padding: 128px 256px; */
+    padding: 9.524vh 128px;
 }
 
 .location .content h1 {
@@ -223,4 +333,28 @@ main .content button {
 .location .content p {
     font-size: 24px;
     text-align: center;
+}
+
+#Google-Maps {
+    width:100%;
+    min-height: 440px;
+    border:0;
+}
+
+
+footer {
+    background-color: #332D29;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap:80px;
+    padding: 128px
+}
+
+footer .txt-left p{
+    padding:32px 0px;
+}
+footer .txt-right p{
+    padding:16px 0px;
 }

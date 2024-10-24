@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mohave:ital,wght@0,300..700;1,300..700&family=Sunflower:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- ============== HEADER ================= -->
+    <div class="off-screen-nav">
+        <ul class="">
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Menu">Menu</a></li>
+            <li><a href="#Location">Location</a></li>
+        </ul>
+    </div>
+    <header>
+        <div class="nav-link">
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Menu">Menu</a></li> 
+                <li><a href="#Location">Location</a></li> 
+            </ul>
+        </div>
+        <div class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+<!-- ============== HERO ================= -->
+    <main id="Home">
+        <div class="content">
+            <h1>Salt Lake Coffee Break</h1>
+            <button onclick="window.location.href='#Menu'" class="primary">Menu</button>
+        </div>
+    </main>
+<!-- ============== ABOUT ================= -->
+    <div class="about" id="About">
+        <img src="rec\about.JPG" class="about-image"></img>
+        <div class="about-text">
+            <h3>Crafting Moments One Cup at a Time</h3>
+            <h1>Our Story</h1>
+            <p>At Salt Lake Coffee Break, we believe that coffee is more than just a drink—it’s an experience. Located near trolly
+            station, our cafe is dedicated to bringing you the finest blends and a warm, inviting atmosphere. Our baristas are
+            passionate about every cup they serve, using only the highest quality beans and traditional techniques to create your
+            favorite beverages.</p>
+            <button onclick="window.location.href='#Location'" class = "secondary">Location</button>
+        </div>
+    </div>
+<!-- ============== MENU ================= -->
+    <div class="menu" id="Menu">
+        <div class="menu-column" id="Latte">
+            <div class="title">Latte</div>
+            <ul>
+                <li>Cafe Latte</li>
+                <li>Cafe Mocha</li>
+                <li>White Mocha</li>
+                <li>Chai Latte</li>
+                <li>Lotus</li>
+                <li>Irishman</li>
+                <li>Bob Marley</li>
+                <li>Caramel Break Macchiato</li>
+            </ul>
+        </div>
+        <div class="menu-column" id="Espresso">
+            <div class="title">Espresso</div>
+            <ul>
+                <li>Drip</li>
+                <li>Single</li>
+                <li>Triple</li>
+                <li>Americana</li>
+                <li>Cappuccino</li>
+                <li>Shot in the Dark</li>
+            </ul>
+        </div>
+        <div class="menu-column" id="Other">
+            <div class="title">Other</div>
+            <ul>
+                <li>HOT / ICED</li>
+                <li>CAFE AU LAIT</li>
+                <li>Turkish Coffee</li>
+                <li>Bottled Drinks</li>
+                <li>Energy Drinks</li>
+                <li>Italian Soda</li>
+                <li>Hot Chocolate</li>
+                <li>Frappuccino</li>
+                <li>Matcha</li>
+            </ul>
+        </div>
+    </div>
+<!-- ============== LOCATION ================= -->
+    <div class="location" id="Location">
+        <div class="content">
+            <h1>Coffee Break</h1>
+            <p>430 East 400 South Salt Lake City Utah 8411</p>
+        </div>
+    </div>
+<!-- ============== GOOGLE MAPS================= -->
+    <iframe
+        id = "Google-Maps"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.0769895567696!2d-111.88106318800035!3d40.760331371267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8752f56b62cac459%3A0x5ac4dae58a860740!2sSalt%20Lake%20Coffee%20Break!5e0!3m2!1sen!2skz!4v1728897029476!5m2!1sen!2skz"
+         allowfullscreen="" loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <footer>
+        <div class="txt-left">
+            <h1>Salt Lake Coffee Break</h1>
+            <p>+1 801-355-4244</p>
+            <p>430 East 400 South Salt Lake City Utah 8411</p>
+        </div>
+        <div class="txt-right">
+            <h2>Hours</h2>
+            <p>Mon-Thurs: 7am - 2am</p>
+            <p>Fri-Sat:   7am - 3am</p>
+            <p>Sun:   7am - 1am</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
